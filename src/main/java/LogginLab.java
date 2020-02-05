@@ -2,6 +2,8 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class LogginLab {
+
+
     private final static Logger logger = Logger.getLogger(LogginLab.class.getName());
 
     private Integer threshold = 0;
@@ -17,6 +19,8 @@ public class LogginLab {
         logger.log(Level.WARNING, "Not So Bad Error!");
 
         logger.log(Level.INFO, "****\n\tAt ZipCode, \n\twe don't use System.out.Println \n\tuntil we've earned the right.\n****");
+        LogginLab log = new LogginLab();
+        System.out.println(log.thresholdReached(10));
 
     }
 
@@ -31,7 +35,12 @@ public class LogginLab {
     public boolean thresholdExceeds(Integer limit) {
         return (this.threshold > limit);
     }
-
+  public  boolean thresholdReached (int limit){
+    setThreshold(20);
+    if (limit> getThreshold()){
+      return true;
+    } else return false;
+  }
     // Write a method called thresholdReached, returns true if argument 'limit' is over the threshold.
     // Write a test for the method in the Test class.
 }
